@@ -4,7 +4,7 @@ from .forms import UserForm, EmergencyForm, ReportForm
 from pymongo import MongoClient
 
 # MongoDB connection setup
-MONGO_URI = "mongodb+srv://Dhanush:2k22ca005@userdetails.mavp0oq.mongodb.net/?retryWrites=true&w=majority" # Update with your MongoDB URI
+MONGO_URI = "mongodb+srv://Dhanush:2k22ca005@userdetails.mavp0oq.mongodb.net/?retryWrites=true&w=majority&appName=userdetails" # Update with your MongoDB URI
 DB_NAME = "Users"  # Replace with your database name
 USER_COLLECTION = "User"  # Replace with your user collection name
 EMERGENCY_COLLECTION = "emergency"  # Replace with your emergency collection name
