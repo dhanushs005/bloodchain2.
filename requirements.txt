@@ -36,8 +36,9 @@ setuptools==75.1.0
 sqlparse==0.5.1
 twilio==9.3.7
 tzdata==2024.2
+pymongo[srv]==4.4.1  # MongoDB driver with SRV support
+dnspython==2.4.2  # Explicit installation of dnspython (optional, for compatibility)
 urllib3==2.2.2
 virtualenv==20.26.6
 Werkzeug==3.0.4
 yarl==1.18.0
-pymongo==3.12.1  # PyMongo version compatible with Render
