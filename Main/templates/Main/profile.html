@@ -1,0 +1,49 @@
+{% extends 'Main/base.html' %}
+
+{% block content %}
+<style media="screen">
+
+
+</style>
+<div class="card det"><br>
+  <div class="card-title ttl">
+    <center>User Details</center>
+  </div><br>
+<div class="card-content">
+<center>
+    <h1 class="head">Welcome, {{ username }}</h1><br>
+    <p class="para">Username: {{ username }}</p><br>
+    <p class="para">Password: {{ password }}</p><br><br> <!-- Optional: Do not display the password in production -->
+    <a href="{% url 'logout' %}" class="btn logout">Logout</a><br><br>
+</center>
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class="card det"><br>
+  <center><h3 class="ttl">Blood Donation Details</h3><br></center>
+    {% if blood_details_message %}
+        <p>{{ blood_details_message }}</p>
+    {% else %}
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Blood Group</th>
+                <th>Last Donated Date</th>
+                <th>District</th>
+            </tr>
+            {% for detail in blood_details %}
+            <tr>
+                <td>{{ detail.name }}</td>
+                <td>{{ detail.mobile }}</td>
+                <td>{{ detail.blood_group }}</td>
+                <td>{{ detail.last_donated_date }}</td>
+                <td>{{ detail.district }}</td>
+            </tr>
+            {% endfor %}
+        </table><br><br>
+    {% endif %}
+</div>
+{% endblock %}

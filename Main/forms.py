@@ -172,3 +172,33 @@ class ReportForm(forms.Form):
             'class': 'w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400'
         })
     )
+class LoginForm(forms.Form):
+    username = forms.CharField(
+        max_length=100,
+        label='Username',
+        widget=forms.TextInput(attrs={
+            'class': 'w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400'
+        })
+    )
+    password = forms.CharField(
+        max_length=100,
+        label='Password',
+        widget=forms.TextInput(attrs={
+            'class': 'w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400'
+        })
+    )
+class SignupForm(forms.Form):
+    username = forms.CharField(
+        max_length=100,
+        label='Username',
+        widget=forms.TextInput(attrs={
+            'class': 'w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400'
+        })
+    )
+    password = forms.CharField(
+        max_length=100,
+        label='Password',
+        widget=forms.TextInput(attrs={
+            'class': 'w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400'
+        })
+    )

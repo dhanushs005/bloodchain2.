@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Blood Chain{% endblock %}</title>
+    <!-- Bootsrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/css">
+    .navbar{
+      display: flex;
+      background: white;
+      padding: 10px;
+    }
+    .nav-brand{
+      padding: 5px;
+      width: 50%;
+      display: flex;
+      align-content: center;
+  /*		justify-content: center;*/
+  /*		background: red;*/
+    }
+    .brand{
+      text-decoration: none;
+      font-size: 2rem;
+      letter-spacing: 3px;
+      font-weight: bold;
+      color: #dc143c;
+    }
+    .nav-menu{
+      /* background: red; */
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      margin-right: 5%;
+    }
+    .nav-links{
+      font-size: 1rem;
+      text-decoration: none;
+      color: black;
+    }
+    .nav-links:hover{
+      font-weight: bold;
+      text-decoration: underline;
+      color:  #dc143c;
+      transition: all .1s ease-in-out;
+    }
         @media (max-width: 768px){
             .brand-name{
                 font-size: 1.5rem;
@@ -25,106 +68,68 @@
             background-color: #f4f4f4;
             text-align: left;
         }
-        .mainnav{
-            background: red;
-        }
-        .links a{
-            font-size: 1.5rem;
-            color: white;
-        }
-        .links a:hover{
-            text-decoration: underline;
-            font-size: 1.5rem;
-            color: white;
-        }
-        .links a:focus{
 
-            font-size: 1.5rem;
-            color: orange;
-        }
         .footer{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            background: red;
-            color: white;
+          display: flex;
+      		align-items: center;
+      		justify-content: center;
+      		padding: 10px;
         }
-        .footer a code{
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        .footer a code:hover{
-            text-decoration: underline;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
+
         .mform{
             background: rgb(225, 225, 225 , .6);
         }
-        .brand-name{
-            padding: 10px;
-            background: linear-gradient(to right,white 50%,black 50%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .frm{
+          border-radius: 12px;
+      		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          background: white;
+          padding: 100px;
+        }
+        .lk{
+          text-decoration: underline;
+          color: blue;
         }
         /* Add this CSS to the page or to your stylesheet */
         .form-fields p {
             margin-bottom: 1rem; /* Adds vertical space between input fields */
         }
+        .head, .para{
+          font-size: 1.5rem;
 
+        }
+        .head{
+          font-weight: bolder;
+        }
+        .ttl{
+          font-size: 2rem;
+          font-weight: bolder;
+          text-decoration: underline;
+        }
+        .logout{
+          background: red;
+          color: white;
+      		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .det{
+
+      		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body class="bg-gray-100">
 
-    <!-- Navbar -->
-    <nav class="bg-white shadow-md mainnav" style="background: red;color: white;padding: 40px;border-radius: 2px;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <!-- Brand Name -->
-                <div class="flex items-center" style="color:white;">
-                    <a href="{% url 'home' %}" class="text-xl font-semibold text-gray-800 hover:text-gray-900 brand-name" style="font-size: 3rem;">
-                        Blood Chain
-                    </a>
-                </div>
-
-                <!-- Menu -->
-                <div class="hidden md:flex space-x-4 items-center links">
-                    <a href="{% url 'home' %}" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
-                        Home
-                    </a>
-                    <a href="{% url 'donors' %}" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
-                        View Donors
-                    </a>
-                    <a href="{% url 'emergency' %}" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
-                        Emergency
-                    </a>
-                    <a href="{% url 'report' %}" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
-                        Report
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-gray-900 focus:outline-none">
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="{% url 'home' %}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
-            <a href="{% url 'donors' %}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">View Donors</a>
-            <a href="{% url 'emergency' %}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Emergency</a>
-            <a href="{% url 'report' %}" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
-                Report
-            </a>
-        </div>
-    </nav>
+    <div class="navbar sticky-top" >
+  		<div class="nav-brand">
+  			<a href="" class="brand">Blood Chain</a>
+  		</div>
+  		<div class="nav-menu">
+  			<a href="{% url 'home' %}" class="nav-links">Home</a>
+  			<a href="{% url 'donors' %}">View Donors</a>
+  			<a href="{% url 'donate' %}" class="nav-links">Donate</a>
+  			<a href="{% url 'emergency' %}" class="nav-links">Request</a>
+  			<a href="{% url 'profile' %}" class="nav-links">Profile</a>
+  		</div>
+  	</div>
 
     <!-- Content -->
     <div class="container mx-auto mt-8">
@@ -132,15 +137,7 @@
         {% endblock %}
     </div>
 
-    <!-- Mobile Menu Toggle Script -->
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
     <br>
 <footer class="bg-red shadow-md footer">
     <a href="https://wtkresumes.42web.io/portfolio/" target="_blank"><code>&copy; Dhanush S, 2024.</code></a>

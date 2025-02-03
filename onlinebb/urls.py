@@ -20,7 +20,15 @@ from Main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('profile',views.profile,name='profile'),
     path('',views.home,name='home'),
+    path('login',views.login,name='login'),
+    path('signup',views.signup,name='signup'),
+    path('save_logs',views.save_logs,name='save_logs'),
+    path('login_user',views.login_user,name='login_user'),
+    path('logout',views.logout,name='logout'),
+    path('user',views.disp_user,name='disp_user'),
+    path('donate',views.donate,name='donate'),
     path('emergency',views.emerg,name='emergency'),
     path('update',views.save_user_details,name='update'),
     path('donors',views.view_donors,name='donors'),
